@@ -78,7 +78,7 @@
                 }
 
                 if ($scope.showNavButtons === true) {
-                    pamarms.navigation = {
+                    params.navigation = {
                         nextEl: ('#nextButton-' + $scope.swiper_uuid),
                         prevEl: ('#prevButton-' + $scope.swiper_uuid),
                     };
