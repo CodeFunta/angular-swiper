@@ -59,27 +59,18 @@
                     slidesPerColumn: $scope.slidesPerColumn || 1,
                     spaceBetween: $scope.spaceBetween || 0,
                     direction: $scope.direction || 'horizontal',
+                    loop: $scope.loop,
                     initialSlide: $scope.initialSlide || 0,
                     showNavButtons: false
                 };
-                //loop: $scope.loop || false,
-                // autoplay: {
-                //     delay: 2500,
-                //     disableOnInteraction: false,
-                // }
+             
 
-                if (!angular.isUndefined($scope.loop) && $scope.loop) {
+                if (!angular.isUndefined($scope.loop) && $scope.loop && !angular.isUndefined($scope.autoplay) && typeof $scope.autoplay === 'number') {
                     params = angular.extend({}, params, {
                         autoplay: {
-                            delay: 2500,
+                            delay: $scope.autoplay || 3000,
                             disableOnInteraction: false,
                         }
-                    });
-                }
-
-                if (!angular.isUndefined($scope.autoplay)) {
-                    params = angular.extend({}, params, {
-                        autoplay: $scope.autoplay
                     });
                 }
 
